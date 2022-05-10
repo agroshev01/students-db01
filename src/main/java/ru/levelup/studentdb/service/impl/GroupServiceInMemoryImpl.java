@@ -16,7 +16,11 @@ public class GroupServiceInMemoryImpl implements GroupService {
 
     @Override
     public void save(Group group) {
-        groups.add(group);
+    // check if group is already exist to avoid of doubleCreating
+        if (groups.contains(group)){
+            System.out.println(group + " is already exist");
+        } else
+        { groups.add(group);}
     }
 
     @Override
