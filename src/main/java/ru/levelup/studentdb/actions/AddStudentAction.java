@@ -25,7 +25,7 @@ public class AddStudentAction implements Action {
     public void setParams(String... param) {
         this.firstName = param[0];
         this.lastName = param[1];
-        this.groupName = param[2];
+//        this.groupName = param[2];
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AddStudentAction implements Action {
         Student student = new Student(firstName, lastName);
         studentsService.save(student);
 
-        Group group = new Group(groupName);
-        groupService.save(group);
+//        Group group = new Group(groupName);
+//        groupService.save(group);
     }
 }

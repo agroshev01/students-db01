@@ -11,7 +11,7 @@ public class Student {
     private String lastName;
 
     public Student(String firstname, String lastname){
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = firstname;
+        this.lastName = lastname;
     }
 }

@@ -19,15 +19,15 @@ public class StudentsJdbcDaoImpl implements DaoService<Student> {
 
     @Override
     public void save(Student student) {
-        String insertSql = "insert into edu_schema.students (firsname, lastname) values (:firsname,:lastname)";
-        String updateSql = "update edu_schema.students set firsname= :firsname, lastname= :lastname where id= :id";
+        String insertSql = "insert into edu_schema.student (firstname, lastname) values (:firstname,:lastname)";
+        String updateSql = "update edu_schema.student set firstname= :firstname, lastname= :lastname where id= :id";
 
         if(student.getId()== null){
-            jdbcTemplate.update(insertSql, Map.of("firsname", student.getFirstName(),
+            jdbcTemplate.update(insertSql, Map.of("firstname", student.getFirstName(),
                     "lastname", student.getLastName() )
             );
         } else{
-            jdbcTemplate.update(updateSql, Map.of("firsname", student.getFirstName(),
+            jdbcTemplate.update(updateSql, Map.of("firstname", student.getFirstName(),
                     "lastname", student.getLastName(),
                     "id", student.getId() )
             );
@@ -37,7 +37,7 @@ public class StudentsJdbcDaoImpl implements DaoService<Student> {
 
     @Override
     public Collection<Student> findAll() {
-        String sql = "select id, firstname, lastname from  edu_schema.students";
+        String sql = "select id, firstname, lastname from  edu_schema.student";
         return jdbcTemplate.query(sql, (rs, rowNum) -> new Student(
                 rs.getLong(1),
                 rs.getString(2),

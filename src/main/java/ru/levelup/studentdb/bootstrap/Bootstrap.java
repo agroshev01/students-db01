@@ -24,7 +24,7 @@ public class Bootstrap implements CommandLineRunner {
         // list students
         // create group GroupName
         // list groups
-        // save
+        // save DB
         // load
 
         String line;
@@ -35,17 +35,18 @@ public class Bootstrap implements CommandLineRunner {
         //need to enter: 'list group' to show list of groups
         while (!(line = reader.readLine()).equals("exit")) {
             String[] tokens = line.split(" ");
-            if (tokens.length < 2) {
-                System.out.println("wrong number of params");
-            } else {
+//            if (tokens.length < 2) {
+//                System.out.println("wrong number of params");
+//            } else {
                 String operation = tokens[0] + " " + tokens[1];
                 if (operation.equals("create group")) {
                     tokens[0] = tokens[1];
                 } else if (operation.equals("list group")) {
                     tokens[0] = "grouplist";
                 }
-                processor.process(tokens[0], Arrays.copyOfRange(tokens, 1, tokens.length));
-            }
+            processor.process(tokens[0], Arrays.copyOfRange(tokens, 1, tokens.length));
+            System.out.print(">");
+//            }
         }
 
         System.out.println();

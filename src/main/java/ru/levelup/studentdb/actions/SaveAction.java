@@ -61,8 +61,8 @@ public class SaveAction implements Action {
 //    </dependency>
     @Override
     public void execute() {
-        String insertSql = "insert into edu_schema.students (firsname, lastname) values (:firsname,:lastname)";
-        String updateSql = "update edu_schema.students set firsname= :firsname, lastname= :lastname where id= :id";
+        String insertSql = "insert into edu_schema.students (firstname, lastname) values (:firstname,:lastname)";
+        String updateSql = "update edu_schema.students set firsname= :firstname, lastname= :lastname where id= :id";
 
         List<Student> allStudent = studentService.findAll();
         allStudent.forEach(student -> {
