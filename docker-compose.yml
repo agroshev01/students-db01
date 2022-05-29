@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+
+  db:
+    image: postgres:12-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: students
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev

@@ -1,0 +1,5 @@
+db:
+  driver: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5433/students
+  user: dev
+  password: dev
